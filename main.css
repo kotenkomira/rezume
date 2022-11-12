@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    max-width: 1400px;
+    display: block;
+    margin: auto;
+    min-height: 100vh;
+    background: #F2AAE0;
+    font-family: sans-serif;
+}
+.navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    background: #370631;
+}
+.link-group{
+    list-style: none;
+    display: flex;
+}
+.link a{
+    color: #D275BB;
+    opacity: 0.12;
+    text-decoration: none;
+    text-transform: none;
+    padding: 10px 30px;
+    margin: 0 20px;
+    line-height: 30px;
+    transition: .5s;
+    font-size: 20px;
+}
+.link a:hover, .link.active a{
+    opacity: 1;
+}
+/*головна сторінка*/
+.home-section{
+    width: 100%;
+    height: 100vh;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+.hero-heading{
+    color: #1A0217;
+    font-size: 50px;
+
+    font-weight: 100;
+}
+.home-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    opacity: 0.7;
+}
+.home-section.active,
+.about-section.active,
+.portfolio-section.active,
+.plan-section.active,
+.book-section.active,
+.contact-section.active
+{
+    position: relative;
+    opacity: 1;
+    z-index: 8;
+}
+
+/*про себе*/
+
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 0;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+}
+.about{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 65%;
+    grid-gap: 40px;
+}
+.about-img-container{
+    position: relative;
+}
+.about-info{
+    color: #340428;
+    opacity: 0.6;
+    font-size: 20px;
+    line-height: 40px;
+}
+.about-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.download-cv-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .5s;
+    background: rgba(0, 0, 0, 0.5);
+}
+.download-cv-btn:hover{
+    background: #000;
+}
+
+/*Portfolio*/
+.portfolio-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+}
+.portfolio-heading{
+    font-size: 100px;
+    background: #252525;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #EC1DB9;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+.portfolio-container
+{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+}
+.portfolio-card{
+    height: 350px;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+.portfolio-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+}
+.portfolio-content{
+    position: relative;
+    padding: 40px;
+    color: #1a0217;
+    transition: .5s;
+    opacity: 0;
+}
+.portfolio-title{
+    font-size: 46px;
+    text-transform: none;
+    text-align: center;
+    font-weight: 300;
+}
+.portfolio-info{
+    margin: 40px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+}
+.portfolio-btn-grp{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+.portfolio-btn{
+    height: 40px;
+    text-transform: none;
+    font-size: 16px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.portfolio-card:hover .portfolio-img{
+    filter: blur(20px);
+}
+.portfolio-card:hover .portfolio-content{
+    opacity: 1;
+}
+
+/*Календарне планування */
+.plan-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+}
+.plan-heading{
+    font-size: 100px;
+    background: #252525;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #EC1DB9;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+.plan-container
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 80px;
+}
+.plan-card{
+    height: 350px;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+.plan-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+}
+.plan-content{
+    position: relative;
+    padding: 40px;
+    color: #7F0870;
+    transition: .5s;
+    opacity: 0;
+}
+.plan-title{
+    font-size: 50px;
+    text-transform: none;
+    text-align: center;
+    font-weight: 300;
+}
+.plan-info{
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.plan-btn-grp{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+.plan-btn{
+    height: 40px;
+    text-transform: none;
+    font-size: 16px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.plan-card:hover .plan-img{
+    filter: blur(20px);
+}
+.plan-card:hover .plan-content{
+    opacity: 1;
+}
+
+/*підручники*/
+
+.book-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+}
+.book-heading{
+    font-size: 100px;
+    background: #252525;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #EC1DB9;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+
+.book-container
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 80px;
+}
+.book-card{
+    height: 350px;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+.book-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .5s;
+}
+.book-content{
+    position: relative;
+    padding: 40px;
+    color: #1a0217;
+    transition: .5s;
+    opacity: 0;
+}
+.book-title{
+    font-size: 50px;
+    text-transform: none;
+    text-align: center;
+    font-weight: 300;
+}
+.book-info{
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.book-btn-grp{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+.book-btn{
+    height: 40px;
+    text-transform: none;
+    font-size: 16px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.book-card:hover .book-img{
+    filter: blur(20px);
+}
+.book-card:hover .book-content{
+    opacity: 1;
+}
+
+
+/*contact*/
+.contact-section{
+    position: relative;
+    top: 0;
+    opacity: 0;
+    transition: 1s;
+    padding: 100px 150px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+}
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #420F33;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: #511B48;
+    padding: 5px 10px;
+}
+::placeholder{
+    color:#4F0449;
+}
+#msg{
+    height: 280px;
+    resize: none;
+    font-family: sans-serif;
+}
+.form-submit-btn{
+background: #511B48;
+color: #fff;
+text-transform: capitalize;
+padding: 15px 40px;
+display: block;
+margin: auto;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+
+}
+.button{
+    color: #E864C4
+}
